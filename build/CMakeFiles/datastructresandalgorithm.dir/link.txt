@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/datastructresandalgorithm.dir/main.cpp.o  -o datastructresandalgorithm ch01/libch01.a 

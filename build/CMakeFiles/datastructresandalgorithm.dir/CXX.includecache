@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alexdockermother/projects/DataStructresAndAlgorithm/./ch01/exe.h
+
+/home/alexdockermother/projects/DataStructresAndAlgorithm/main.cpp
+iostream
+-
+./ch01/exe.h
+/home/alexdockermother/projects/DataStructresAndAlgorithm/./ch01/exe.h
+
