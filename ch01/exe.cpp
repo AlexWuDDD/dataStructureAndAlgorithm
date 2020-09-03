@@ -19,7 +19,27 @@ void ch01_exe::run_test()
     R_1_7(10);
     R_1_8(55, 10);
     R_1_8(64, 2);
+
     
+    int rows = 3;
+    int columns = 4;
+    
+    int **array = new int*[rows];
+    for(int i = 0; i < rows ; ++i){
+        array[i] = new int[columns];
+        for(int j = 0; j < columns ; ++j){
+            array[i][j] = i + j;
+        }
+    }
+    
+    R_1_9_printArray(array, rows, columns);
+    
+    for(int i = 0; i < rows; ++i){
+        delete [] array[i];
+    }
+    delete [] array;
+    
+    R_1_10();
 }
 
 
@@ -127,6 +147,41 @@ void ch01_exe::R_1_8(int n, int m)
     printFormat();
 }
 
+void ch01_exe::R_1_9_printArray(int **array, int m, int n)
+{
+    printFormat();
+    cout << "R_1_9" << endl;
+    for(int i = 0 ; i < m; ++i){
+        for(int j = 0; j < n ; ++j){
+            cout << array[i][j] << " ";
+        }
+        cout << endl;
+    }
+    printFormat();
+    
+}
+
+void ch01_exe::R_1_10()
+{
+    printFormat();
+    cout << "R_1_10" << endl;
+    int x = 10;
+    f(x);
+    cout << "after f, x is "<< x << endl;
+    g(x);
+    cout << "after g, x is "<< x << endl;
+    printFormat();
+}
+
+void ch01_exe::f(int x)
+{
+    cout << "in f: "<< ++x << endl;
+}
+
+void ch01_exe::g(int &x)
+{
+    cout << "in g: "<< ++x << endl;
+}
 
 
 

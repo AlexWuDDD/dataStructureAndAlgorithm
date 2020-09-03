@@ -16,6 +16,11 @@ private:
     static void R_1_6();
     static void R_1_7(int n);
     static void R_1_8(int n, int m);
+    static void R_1_9_printArray(int **array, int m, int n);
+    
+    static void R_1_10();
+    static void f(int x);
+    static void g(int &x);
 };
 
 
