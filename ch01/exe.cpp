@@ -40,6 +40,11 @@ void ch01_exe::run_test()
     delete [] array;
     
     R_1_10();
+    cout << "last three test" << endl;
+    cout << R_1_20(10) << endl;
+    cout << R_1_21(10) << endl;
+    cout << R_1_21(9) << endl;
+    cout << R_1_22(9.9) << endl;
 }
 
 
@@ -182,6 +187,58 @@ void ch01_exe::g(int &x)
 {
     cout << "in g: "<< ++x << endl;
 }
+
+
+bool ch01_exe::R_1_18_isMultiple(long m, long n)
+{
+    return n % m == 0;
+}
+
+bool ch01_exe::R_1_19_isTwoPower(int i)
+{
+    return ( i & (i-1)) == 0;
+}
+
+
+long ch01_exe::R_1_20(int i)
+{
+    return (1 + i-1)*(i-1)/2;
+}
+
+
+long ch01_exe::R_1_21(int i)
+{
+    int n = 0;
+    if(i%2 == 0){
+        n = i/2;
+        --i;
+    }
+    else{
+        n = (i-1)/2;
+        i -= 2;
+        
+    }
+    
+    return (1+i)*n/2;
+}
+
+
+int ch01_exe::R_1_22(double x)
+{
+    if(x <= 0){
+        return -1;
+    }
+    int cnt = 0;
+    while(x > 2){
+        cout << x << endl;
+        x /= 2;
+        ++cnt;
+    }
+    
+    return cnt;
+}
+
+
 
 
 

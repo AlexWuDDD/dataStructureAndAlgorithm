@@ -21,6 +21,12 @@ private:
     static void R_1_10();
     static void f(int x);
     static void g(int &x);
+    
+    static bool R_1_18_isMultiple(long m, long n);
+    static bool R_1_19_isTwoPower(int i);
+    static long R_1_20(int i);
+    static long R_1_21(int i);
+    static int R_1_22(double x);
 };
 
 
