@@ -1,6 +1,8 @@
 #ifndef EXE_H
 #define EXE_H
 
+#include <vector>
+
 class ch01_exe
 {
 public:    
@@ -27,6 +29,13 @@ private:
     static long R_1_20(int i);
     static long R_1_21(int i);
     static int R_1_22(double x);
+    
+    static void C_1_1(int *array, int len);
+    static void C_1_2(int *array, int len);
+    static void C_1_3(const std::vector<int> &vct);
+    static void C_1_4(const std::vector<int> &vct);
+    
+    static void C_1_5(int *array, int len);
 };
 
 

@@ -45,6 +45,29 @@ void ch01_exe::run_test()
     cout << R_1_21(10) << endl;
     cout << R_1_21(9) << endl;
     cout << R_1_22(9.9) << endl;
+    
+    cout << "Creativity" << endl;
+    int array2[5] = {1,2,3,4,5};
+    int array3[6] = {1,2,3,4,5,6};
+    C_1_1(array2, sizeof(array2)/sizeof(int));
+    C_1_1(array3, sizeof(array3)/sizeof(int));
+    
+    C_1_2(array2, sizeof(array2)/sizeof(int));
+    
+    std::vector<int> vct1 = {1,2,3,4,5};
+    std::vector<int> vct2 = {2,2,3,3,5};
+    C_1_3(vct1);
+    C_1_3(vct2);
+    
+    C_1_4(vct1);
+    
+    int array4[52] = {0};
+    for(int i = 0; i < 52; ++i){
+        array4[i] = i+1;
+    }
+    for(int i = 0; i < 10; ++i){
+        C_1_5(array4, sizeof(array4)/sizeof(int));
+    }
 }
 
 
@@ -239,6 +262,83 @@ int ch01_exe::R_1_22(double x)
 }
 
 
+void ch01_exe::C_1_1(int* array, int len)
+{
+    printFormat();
+    cout << "C_1_1" << endl;
+    for(int i = 0; i < len/2; ++i){
+        int tmp = array[i];
+        array[i] = array[len-i-1];
+        array[len-i-1] = tmp;
+    }
+    
+    for(int i = 0; i < len; ++i){
+    
+        cout << array[i] << " ";
+    }
+    cout << endl;
+    printFormat();
+}
+
+
+void ch01_exe::C_1_2(int* array, int len)
+{
+    printFormat();
+    cout << "C_1_2" << endl;
+    for(int i = 0; i < len; ++i){
+        if(array[i] % 2 == 0){
+            cout << "there is a pair of numbers in the array whose product is even." << endl;
+            break;
+        }
+    }
+    printFormat();
+}
+
+void ch01_exe::C_1_3(const std::vector<int>& vct)
+{
+    int size = vct.size();
+    for(int i = 0; i < size-1; ++i){
+        for(int j = i+1; j < size; ++j){
+            if(vct[i] == vct[j]){
+                cout << "there are duplicated item" << endl;
+                return;
+            }
+        }
+    }
+    cout << "items in vector are distinct" << endl;
+}
+
+void ch01_exe::C_1_4(const std::vector<int>& vct)
+{
+    cout << "odds: ";
+    for(const auto& item : vct){
+        if(item % 2 == 1){
+            cout << item <<  " ";
+        }
+    }
+    cout << endl;
+}
+
+void ch01_exe::C_1_5(int* array, int len)
+{
+    printFormat();
+    cout << "C_1_5" << endl;
+    for(int i = 0; i < len; ++i){
+        int swapIndex1 = rand()%len;
+        int swapIndex2 = rand()%len;
+        
+        int tmp = array[swapIndex1];
+        array[swapIndex1] = array[swapIndex2];
+        array[swapIndex2] = tmp;
+    }
+    
+    for(int i = 0; i < len; ++i){
+        cout << array[i] << " ";
+    }
+    cout << endl;
+    
+    printFormat();
+}
 
 
 
