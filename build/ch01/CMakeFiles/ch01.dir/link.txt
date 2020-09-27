@@ -1,2 +1,0 @@
-/usr/bin/ar qc libch01.a  CMakeFiles/ch01.dir/exe.cpp.o
-/usr/bin/ranlib libch01.a

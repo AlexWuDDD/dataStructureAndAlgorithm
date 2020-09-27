@@ -1,3 +1,0 @@
-/home/alexdockermother/projects/DataStructresAndAlgorithm/ch01/card/build/CMakeFiles/rebuild_cache.dir
-/home/alexdockermother/projects/DataStructresAndAlgorithm/ch01/card/build/CMakeFiles/testCard.dir
-/home/alexdockermother/projects/DataStructresAndAlgorithm/ch01/card/build/CMakeFiles/edit_cache.dir

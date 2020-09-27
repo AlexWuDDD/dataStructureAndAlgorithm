@@ -2,6 +2,7 @@
 #define EXE_H
 
 #include <vector>
+using std::vector;
 
 class ch01_exe
 {
@@ -32,10 +33,19 @@ private:
     
     static void C_1_1(int *array, int len);
     static void C_1_2(int *array, int len);
-    static void C_1_3(const std::vector<int> &vct);
-    static void C_1_4(const std::vector<int> &vct);
+    static void C_1_3(const vector<int> &vct);
+    static void C_1_4(const vector<int> &vct);
     
     static void C_1_5(int *array, int len);
+    static void C_1_6();
+    static void C_1_7();
+    
+    static void C_1_8();
+    static vector<double> vectProd(const vector<double> &v1, const vector<double> &v2);
+    
+    static long C_1_10(int i);
+    
+    static long GCD(long m, long n);
 };
 
 

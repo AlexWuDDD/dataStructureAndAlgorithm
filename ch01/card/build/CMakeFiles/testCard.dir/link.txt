@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/testCard.dir/TestCard.cpp.o CMakeFiles/testCard.dir/CreditCard.cpp.o  -o testCard 

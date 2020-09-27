@@ -1,9 +1,13 @@
 #include "exe.h"
 #include <iostream>
 #include <limits>
+#include <stack>
+using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
+using std::stack;
+
 
 void ch01_exe::run_test()
 {
@@ -68,6 +72,22 @@ void ch01_exe::run_test()
     for(int i = 0; i < 10; ++i){
         C_1_5(array4, sizeof(array4)/sizeof(int));
     }
+    
+    C_1_6();
+    C_1_7();
+    C_1_8();
+    
+    printFormat();
+    cout << "C_1_10" << endl;
+    cout << C_1_10(5) << endl;
+    cout << C_1_10(6) << endl;
+    cout << C_1_10(7) << endl;
+    printFormat();
+    
+    printFormat();
+    if(GCD(80844, 25320) == 12){cout << "test passed" << endl;}
+    if(GCD(25320, 80844) == 12){cout << "test passed" << endl;}
+    printFormat();
 }
 
 
@@ -341,6 +361,102 @@ void ch01_exe::C_1_5(int* array, int len)
 }
 
 
+void ch01_exe::C_1_6()
+{
+    printFormat();
+    char array[] = {'a','b','c','d','e','f'};
+    int size = sizeof(array)/sizeof(char);
+    for(int i = 0; i < size; ++i){
+        string a;
+        a.push_back(array[i]);
+        for(int j = 0; j < size; ++j){
+            if(j != i){
+                a.push_back(array[j]);
+                for(int k = 0; k < size; ++k){
+                    if(k != i && k != j){
+                        a.push_back(array[k]);
+                        for(int l = 0; l < size; ++l){
+                            if(l != i && l != j && l != k){
+                                a.push_back(array[l]);
+                                for(int m = 0; m < size; ++m){
+                                    if(m != i && m != j && m != k && m != l){
+                                        a.push_back(array[m]);
+                                        for(int n = 0; n < size; ++n){
+                                            if(n != i && n != j && n != k && n != l && n != m){
+                                                a.push_back(array[n]);
+                                                cout << a << endl;
+                                                a.pop_back();
+                                            }
+                                        }
+                                        a.pop_back();
+                                    }
+                                }
+                                a.pop_back();
+                            }
+                        }
+                        a.pop_back();
+                    }
+                }
+                a.pop_back();
+            }
+        }
+    }
+    
+    
+    printFormat();
+}
+
+void ch01_exe::C_1_7()
+{
+    std::stack<string> stk;
+    cout << "Please input lines: " << endl;
+    string str;
+    /*CTRL + D 结束*/
+    while(cin >> str){
+        stk.push(str);
+        str.clear();
+    }
+    while(!stk.empty()){
+        cout << stk.top() << endl;
+        stk.pop();
+    }
+}
+
+void ch01_exe::C_1_8()
+{
+    printFormat();
+    vector<double> a = {1.1, 2.2, 3.3};
+    vector<double> b = {4.4, 5.5, 6.6};
+    
+    vector<double> ret = vectProd(a, b);
+    for(const auto &item : ret){
+        cout << item << " ";
+    }
+    cout << endl;
+    printFormat();
+}
+
+
+vector<double> ch01_exe::vectProd(const vector<double>& v1, const vector<double>& v2)
+{
+    vector<double> ret;
+    if(v1.size() == v2.size()){
+        for(int i = 0; i < v1.size(); ++i){
+            ret.emplace_back(v1[i] * v2[i]);
+        }
+    }
+    return ret;
+}
+
+long ch01_exe::C_1_10(int i)
+{
+    return 2 << i;
+}
+
+long ch01_exe::GCD(long m, long n)
+{
+    return n > 0? GCD(n, m%n) : m;
+}
 
 
 
