@@ -1,0 +1,2 @@
+/usr/bin/ar qc libch02.a  CMakeFiles/ch02.dir/ArithProgression.cpp.o CMakeFiles/ch02.dir/FibonacciProgression.cpp.o CMakeFiles/ch02.dir/GeomProgression.cpp.o CMakeFiles/ch02.dir/Progression.cpp.o CMakeFiles/ch02.dir/ch02Exe.cpp.o CMakeFiles/ch02.dir/ch02Sample.cpp.o
+/usr/bin/ranlib libch02.a
